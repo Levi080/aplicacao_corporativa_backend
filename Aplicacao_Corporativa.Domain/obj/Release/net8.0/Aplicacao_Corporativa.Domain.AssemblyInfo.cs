@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Aplicacao_Corporativa.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c899559a3f11dcbb1aa75728dde13d07e1c2d720")]
 [assembly: System.Reflection.AssemblyProductAttribute("Aplicacao_Corporativa.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Aplicacao_Corporativa.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

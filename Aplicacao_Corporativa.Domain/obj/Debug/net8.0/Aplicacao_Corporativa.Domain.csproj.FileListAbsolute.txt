@@ -5,8 +5,8 @@ C:\Users\Admin\source\repos\aplicacao_corporativa_backend\Aplicacao_Corporativa.
 C:\Users\Admin\source\repos\aplicacao_corporativa_backend\Aplicacao_Corporativa.Domain\obj\Debug\net8.0\Aplicacao_Corporativa.Domain.AssemblyInfoInputs.cache
 C:\Users\Admin\source\repos\aplicacao_corporativa_backend\Aplicacao_Corporativa.Domain\obj\Debug\net8.0\Aplicacao_Corporativa.Domain.AssemblyInfo.cs
 C:\Users\Admin\source\repos\aplicacao_corporativa_backend\Aplicacao_Corporativa.Domain\obj\Debug\net8.0\Aplicacao_Corporativa.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\aplicacao_corporativa_backend\Aplicacao_Corporativa.Domain\obj\Debug\net8.0\Aplicacao_Corporativa.Domain.sourcelink.json
 C:\Users\Admin\source\repos\aplicacao_corporativa_backend\Aplicacao_Corporativa.Domain\obj\Debug\net8.0\Aplicacao_Corporativa.Domain.dll
 C:\Users\Admin\source\repos\aplicacao_corporativa_backend\Aplicacao_Corporativa.Domain\obj\Debug\net8.0\refint\Aplicacao_Corporativa.Domain.dll
 C:\Users\Admin\source\repos\aplicacao_corporativa_backend\Aplicacao_Corporativa.Domain\obj\Debug\net8.0\Aplicacao_Corporativa.Domain.pdb
 C:\Users\Admin\source\repos\aplicacao_corporativa_backend\Aplicacao_Corporativa.Domain\obj\Debug\net8.0\ref\Aplicacao_Corporativa.Domain.dll
-C:\Users\Admin\source\repos\aplicacao_corporativa_backend\Aplicacao_Corporativa.Domain\obj\Debug\net8.0\Aplicacao_Corporativa.Domain.sourcelink.json

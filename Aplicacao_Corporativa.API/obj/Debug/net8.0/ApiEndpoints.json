@@ -30,5 +30,31 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Aplicacao_Corporativa.API.Controllers.PessoaController",
+    "Method": "Criar",
+    "RelativePath": "api/Pessoa/criar",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Aplicacao_Corporativa.Domain.DTO.PessoaCadastroRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Aplicacao_Corporativa.API.Controllers.PessoaController",
+    "Method": "Listar",
+    "RelativePath": "api/Pessoa/listar",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
   }
 ]

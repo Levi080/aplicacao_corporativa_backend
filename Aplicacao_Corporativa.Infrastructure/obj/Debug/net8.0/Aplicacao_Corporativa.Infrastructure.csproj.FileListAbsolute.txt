@@ -8,9 +8,9 @@ C:\Users\Admin\source\repos\aplicacao_corporativa_backend\Aplicacao_Corporativa.
 C:\Users\Admin\source\repos\aplicacao_corporativa_backend\Aplicacao_Corporativa.Infrastructure\obj\Debug\net8.0\Aplicacao_Corporativa.Infrastructure.AssemblyInfoInputs.cache
 C:\Users\Admin\source\repos\aplicacao_corporativa_backend\Aplicacao_Corporativa.Infrastructure\obj\Debug\net8.0\Aplicacao_Corporativa.Infrastructure.AssemblyInfo.cs
 C:\Users\Admin\source\repos\aplicacao_corporativa_backend\Aplicacao_Corporativa.Infrastructure\obj\Debug\net8.0\Aplicacao_Corporativa.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\aplicacao_corporativa_backend\Aplicacao_Corporativa.Infrastructure\obj\Debug\net8.0\Aplicacao_Corporativa.Infrastructure.sourcelink.json
 C:\Users\Admin\source\repos\aplicacao_corporativa_backend\Aplicacao_Corporativa.Infrastructure\obj\Debug\net8.0\Aplicaca.E232676B.Up2Date
 C:\Users\Admin\source\repos\aplicacao_corporativa_backend\Aplicacao_Corporativa.Infrastructure\obj\Debug\net8.0\Aplicacao_Corporativa.Infrastructure.dll
 C:\Users\Admin\source\repos\aplicacao_corporativa_backend\Aplicacao_Corporativa.Infrastructure\obj\Debug\net8.0\refint\Aplicacao_Corporativa.Infrastructure.dll
 C:\Users\Admin\source\repos\aplicacao_corporativa_backend\Aplicacao_Corporativa.Infrastructure\obj\Debug\net8.0\Aplicacao_Corporativa.Infrastructure.pdb
 C:\Users\Admin\source\repos\aplicacao_corporativa_backend\Aplicacao_Corporativa.Infrastructure\obj\Debug\net8.0\ref\Aplicacao_Corporativa.Infrastructure.dll
-C:\Users\Admin\source\repos\aplicacao_corporativa_backend\Aplicacao_Corporativa.Infrastructure\obj\Debug\net8.0\Aplicacao_Corporativa.Infrastructure.sourcelink.json

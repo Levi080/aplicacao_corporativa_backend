@@ -12,6 +12,18 @@ namespace Aplicacao_Corporativa.API
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+            #region CORS
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("ReactAppPolicy", policy =>
+                {
+                    policy.WithOrigins("http://localhost:5173") // A URL do seu Vite/React
+                          .AllowAnyHeader()                     // Permite qualquer cabeçalho (Content-Type, etc)
+                          .AllowAnyMethod();                    // Permite GET, POST, PUT, DELETE
+                });
+            });
+            #endregion
+
             #region CONFIGURAÇÕES BANCO DE DADOS
 
             // Registrar o DbContext
@@ -22,6 +34,7 @@ namespace Aplicacao_Corporativa.API
 
             #region ADIÇÃO DOS SERVIÇOS 
             builder.Services.AddScoped<IAuthService, AuthService>();
+            builder.Services.AddScoped<IPessoaService, PessoaService>();
             #endregion
 
             builder.Services.AddControllers();
@@ -39,6 +52,8 @@ namespace Aplicacao_Corporativa.API
             }
 
             app.UseHttpsRedirection();
+
+            app.UseCors("ReactAppPolicy");
 
             app.UseAuthorization();
 

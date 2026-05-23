@@ -1,5 +1,6 @@
 ﻿using Aplicacao_Corporativa.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata;
 
 
 namespace Aplicacao_Corporativa.Infrastructure.Data
@@ -13,25 +14,29 @@ namespace Aplicacao_Corporativa.Infrastructure.Data
         {
             base.OnModelCreating(modelBuilder);
 
-            // Esse loop resolve o seu problema globalmente para todas as tabelas atuais e futuras!
             foreach (var entity in modelBuilder.Model.GetEntityTypes())
             {
-                // 1. Garante que o EF busque a tabela em minúsculo (ex: "usuario")
+                // 1. Mantém o nome da tabela em minúsculo
                 entity.SetTableName(entity.GetTableName().ToLower());
 
                 foreach (var property in entity.GetProperties())
                 {
-                    // 2. Garante que o EF busque as colunas em minúsculo (ex: "usuarioid", "senha_hash")
+                    // O PULO DO GATO: Se você já colocou um [Column("nome_com_underscore")] na entidade, 
+                    // o EF armazena isso no StoreObjectIdentifier. Nós checamos se ele existe.
+                    var storeObject = StoreObjectIdentifier.Table(entity.GetTableName(), entity.GetSchema());
+                    var columnNameDefinido = property.GetColumnName(storeObject);
+
+                    // 2. Se a coluna contém um underscore '_', significa que você já mapeou manualmente na classe.
+                    // Então nós NÃO tocamos nela, deixamos como está!
+                    if (columnNameDefinido != null && columnNameDefinido.Contains("_"))
+                    {
+                        continue;
+                    }
+
+                    // 3. Se não tiver underscore, aí sim aplicamos o ToLower() padrão automaticamente
                     property.SetColumnName(property.Name.ToLower());
                 }
             }
-
-            // Configuração das chaves do Exame (mantenha como estava)
-            //modelBuilder.Entity<Exame>(entity =>
-            //{
-            //    entity.HasOne(e => e.Paciente).WithMany().HasForeignKey(e => e.PacienteId);
-            //    entity.HasOne(e => e.Tecnica).WithMany().HasForeignKey(e => e.TecnicaId);
-            //});
         }
 
         public DbSet<Pessoa> Pessoa { get; set; }
