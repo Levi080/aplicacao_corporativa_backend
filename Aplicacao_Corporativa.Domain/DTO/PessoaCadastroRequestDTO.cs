@@ -8,6 +8,8 @@ namespace Aplicacao_Corporativa.Domain.DTO
 {
     public class PessoaCadastroRequestDTO
     {
+        public int? PessoaId { get; set; }
+
         public string Nome { get; set; } = null!;
 
         public string Cpf { get; set; } = null!;

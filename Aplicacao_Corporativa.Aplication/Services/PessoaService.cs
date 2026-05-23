@@ -31,6 +31,14 @@ namespace Aplicacao_Corporativa.Aplication.Services
                 return "Este CPF já está cadastrado.";
             }
 
+            var tipoExiste = await _context.PessoaTipo
+                .AnyAsync(t => t.PessoaTipoId == request.PessoaTipoId);
+
+            if (!tipoExiste)
+            {
+                return "O Tipo de Pessoa informado é inválido.";
+            }
+
             // 2. Mapeia o DTO para a Entidade do Banco
             var novaPessoa = new Pessoa
             {
@@ -40,7 +48,7 @@ namespace Aplicacao_Corporativa.Aplication.Services
                 Telefone = request.Telefone,
                 PessoaTipoId = request.PessoaTipoId,
                 AtualizadoPor = request.AtualizadoPor,
-                AtualizadoEm = DateTime.UtcNow 
+                AtualizadoEm = DateTime.UtcNow
             };
 
             // 3. Salva no banco
@@ -69,6 +77,67 @@ namespace Aplicacao_Corporativa.Aplication.Services
                 AtualizadoPor = p.AtualizadoPor,
                 AtualizadoEm = p.AtualizadoEm
             }).ToList();
+        }
+
+        public async Task<string> AtualizarPessoa(PessoaCadastroRequestDTO request)
+        {
+            // 1. Busca a pessoa existente no banco pelo ID
+            var pessoa = await _context.Pessoa.FirstOrDefaultAsync(p => p.PessoaId == request.PessoaId);
+
+            if (pessoa == null)
+            {
+                return "Pessoa não encontrada.";
+            }
+
+            // 2. Validação: Se mudou o CPF, verifica se o novo CPF já não pertence a OUTRA pessoa
+            var cpfJaExiste = await _context.Pessoa
+                .AnyAsync(p => p.Cpf == request.Cpf && p.PessoaId != request.PessoaId);
+
+            if (cpfJaExiste)
+            {
+                return "Este CPF já está sendo usado por outra pessoa.";
+            }
+
+            // 3. Validação: Verifica se o novo tipo de pessoa existe
+            var tipoExiste = await _context.PessoaTipo
+                .AnyAsync(t => t.PessoaTipoId == request.PessoaTipoId);
+
+            if (!tipoExiste)
+            {
+                return "O Tipo de Pessoa informado é inválido.";
+            }
+
+            // 4. Atualiza os campos do objeto que veio do banco
+            pessoa.Nome = request.Nome;
+            pessoa.Cpf = request.Cpf;
+            pessoa.Nascimento = request.Nascimento;
+            pessoa.Telefone = request.Telefone;
+            pessoa.PessoaTipoId = request.PessoaTipoId;
+            pessoa.AtualizadoPor = request.AtualizadoPor;
+            pessoa.AtualizadoEm = DateTime.UtcNow; // Atualiza a data de modificação
+
+            // 5. Salva as alterações no Postgres
+            _context.Pessoa.Update(pessoa);
+            await _context.SaveChangesAsync();
+
+            return "Sucesso";
+        }
+
+        public async Task<string> ExcluirPessoa(int id)
+        {
+            // 1. Busca a pessoa no banco
+            var pessoa = await _context.Pessoa.FirstOrDefaultAsync(p => p.PessoaId == id);
+
+            if (pessoa == null)
+            {
+                return "Pessoa não encontrada.";
+            }
+
+            // 3. Remove a pessoa e salva as alterações
+            _context.Pessoa.Remove(pessoa);
+            await _context.SaveChangesAsync();
+
+            return "Sucesso";
         }
     }
 }

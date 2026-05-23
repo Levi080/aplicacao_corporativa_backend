@@ -33,6 +33,38 @@
   },
   {
     "ContainingType": "Aplicacao_Corporativa.API.Controllers.PessoaController",
+    "Method": "Excluir",
+    "RelativePath": "api/Pessoa/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Aplicacao_Corporativa.API.Controllers.PessoaController",
+    "Method": "Atualizar",
+    "RelativePath": "api/Pessoa/atualizar",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Aplicacao_Corporativa.Domain.DTO.PessoaCadastroRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Aplicacao_Corporativa.API.Controllers.PessoaController",
     "Method": "Criar",
     "RelativePath": "api/Pessoa/criar",
     "HttpMethod": "POST",

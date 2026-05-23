@@ -109,6 +109,60 @@
           }
         }
       }
+    },
+    "/api/Pessoa/atualizar": {
+      "put": {
+        "tags": [
+          "Pessoa"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PessoaCadastroRequestDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PessoaCadastroRequestDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/PessoaCadastroRequestDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Pessoa/{id}": {
+      "delete": {
+        "tags": [
+          "Pessoa"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     }
   },
   "components": {
@@ -134,6 +188,11 @@
       "PessoaCadastroRequestDTO": {
         "type": "object",
         "properties": {
+          "pessoaId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
           "nome": {
             "type": "string",
             "nullable": true

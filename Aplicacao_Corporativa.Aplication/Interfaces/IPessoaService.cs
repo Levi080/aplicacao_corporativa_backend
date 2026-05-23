@@ -12,5 +12,9 @@ namespace Aplicacao_Corporativa.Aplication.Interfaces
         Task<string> CadastrarPessoa(PessoaCadastroRequestDTO request);
 
         Task<List<PessoaResponseDTO>> ListarPessoas();
+
+        Task<string> AtualizarPessoa(PessoaCadastroRequestDTO request);
+
+        Task<string> ExcluirPessoa(int id);
     }
 }

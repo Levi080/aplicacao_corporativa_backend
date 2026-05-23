@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Aplicacao_Corporativa.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c899559a3f11dcbb1aa75728dde13d07e1c2d720")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+eac0636230500323996bc4ec88e05fba7df6f798")]
 [assembly: System.Reflection.AssemblyProductAttribute("Aplicacao_Corporativa.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Aplicacao_Corporativa.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
