@@ -13,3 +13,4 @@ C:\Users\Admin\source\repos\aplicacao_corporativa_backend\Aplicacao_Corporativa.
 C:\Users\Admin\source\repos\aplicacao_corporativa_backend\Aplicacao_Corporativa.Infrastructure\obj\Debug\net8.0\refint\Aplicacao_Corporativa.Infrastructure.dll
 C:\Users\Admin\source\repos\aplicacao_corporativa_backend\Aplicacao_Corporativa.Infrastructure\obj\Debug\net8.0\Aplicacao_Corporativa.Infrastructure.pdb
 C:\Users\Admin\source\repos\aplicacao_corporativa_backend\Aplicacao_Corporativa.Infrastructure\obj\Debug\net8.0\ref\Aplicacao_Corporativa.Infrastructure.dll
+C:\Users\Admin\source\repos\aplicacao_corporativa_backend\Aplicacao_Corporativa.Infrastructure\obj\Debug\net8.0\Aplicacao_Corporativa.Infrastructure.sourcelink.json
