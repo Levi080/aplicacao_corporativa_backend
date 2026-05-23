@@ -17,7 +17,7 @@ namespace Aplicacao_Corporativa.API
             {
                 options.AddPolicy("ReactAppPolicy", policy =>
                 {
-                    policy.WithOrigins("http://localhost:5173", "https://aplicacao-corporativa-front.onrender.com/") // A URL do seu Vite/React
+                    policy.WithOrigins("http://localhost:5173", "https://aplicacao-corporativa-front.onrender.com") // A URL do seu Vite/React
                           .AllowAnyHeader()                     // Permite qualquer cabeçalho (Content-Type, etc)
                           .AllowAnyMethod();                    // Permite GET, POST, PUT, DELETE
                 });
