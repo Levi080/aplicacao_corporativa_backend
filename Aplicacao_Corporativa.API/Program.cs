@@ -1,0 +1,51 @@
+using Aplicacao_Corporativa.Aplication.Interfaces;
+using Aplicacao_Corporativa.Aplication.Services;
+using Aplicacao_Corporativa.Infrastructure.Data;
+using Microsoft.EntityFrameworkCore;
+
+namespace Aplicacao_Corporativa.API
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            var builder = WebApplication.CreateBuilder(args);
+
+            // Add services to the container.
+            #region CONFIGURAÇÕES BANCO DE DADOS
+
+            // Registrar o DbContext
+            builder.Services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+            #endregion
+
+            #region ADIÇÃO DOS SERVIÇOS 
+            builder.Services.AddScoped<IAuthService, AuthService>();
+            #endregion
+
+            builder.Services.AddControllers();
+            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+            builder.Services.AddEndpointsApiExplorer();
+            builder.Services.AddSwaggerGen();
+
+            var app = builder.Build();
+
+            // Configure the HTTP request pipeline.
+            if (app.Environment.IsDevelopment())
+            {
+                app.UseSwagger();
+                app.UseSwaggerUI();
+            }
+
+            app.UseHttpsRedirection();
+
+            app.UseAuthorization();
+
+
+            app.MapControllers();
+
+            app.Run();
+        }
+    }
+}
