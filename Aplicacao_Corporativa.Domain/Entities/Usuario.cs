@@ -13,11 +13,19 @@ namespace Aplicacao_Corporativa.Domain.Entities
     {
         [Key]
         public int UsuarioId { get; set; }
+
         public string Nome { get; set; } = null!;
+
         public string Email { get; set; } = null!;
+
+        [Column("senha_hash")]
         public byte[] Senha_Hash { get; set; } = null!;
+        
+        [Column("senha_salt")]
         public byte[] Senha_Salt { get; set; } = null!;
+
         public bool Ativo { get; set; }
+        
         public DateTime DataCriacao { get; set; }
     }
 }
